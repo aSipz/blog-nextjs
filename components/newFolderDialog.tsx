@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Dialog, TextInput } from 'evergreen-ui'
+import React, { useState } from 'react';
+import { Dialog, TextInput } from 'evergreen-ui';
 
 const NewFolderDialog = ({ onNewFolder, close, ...props }) => {
-  const [name, setName] = useState('')
-  const [saving, setSaving] = useState(false)
+  const [name, setName] = useState('');
+  const [saving, setSaving] = useState(false);
 
   const handleNewFolder = async () => {
     setSaving(true)
@@ -11,7 +11,7 @@ const NewFolderDialog = ({ onNewFolder, close, ...props }) => {
     setSaving(false)
     setName('')
     close()
-  }
+  };
 
   return (
     <Dialog
@@ -26,7 +26,7 @@ const NewFolderDialog = ({ onNewFolder, close, ...props }) => {
     >
       <TextInput value={name} onChange={(e) => setName(e.target.value)} placeholder="folder name" />
     </Dialog>
-  )
+  );
 }
 
-export default NewFolderDialog
+export default NewFolderDialog;

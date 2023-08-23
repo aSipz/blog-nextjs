@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
-import { Pane, majorScale, Text, Button } from 'evergreen-ui'
-import NextLink from 'next/link'
-import { useSession } from 'next-auth/client'
-import Container from './container'
-import Logo from './logo'
+import React, { FC } from 'react';
+import { Pane, majorScale, Text, Button } from 'evergreen-ui';
+import NextLink from 'next/link';
+import { useSession } from 'next-auth/client';
+import Container from './container';
+import Logo from './logo';
 
 const HomeNav: FC<{ links?: { name: string; link: string }[] }> = ({ links }) => {
-  const [session] = useSession()
+  const [session] = useSession();
 
   return (
     <nav>
@@ -18,14 +18,14 @@ const HomeNav: FC<{ links?: { name: string; link: string }[] }> = ({ links }) =>
             <Pane display="flex" justifyContent="space-around" alignItems="center">
               {links && links.length > 0
                 ? links.map((link) => (
-                    <Pane paddingX={majorScale(3)} key={link.name}>
-                      <NextLink href="/blog">
-                        <a>
-                          <Text fontSize="16px">Blog</Text>
-                        </a>
-                      </NextLink>
-                    </Pane>
-                  ))
+                  <Pane paddingX={majorScale(3)} key={link.name}>
+                    <NextLink href="/blog">
+                      <a>
+                        <Text fontSize="16px">Blog</Text>
+                      </a>
+                    </NextLink>
+                  </Pane>
+                ))
                 : null}
 
               <Pane paddingX={majorScale(3)}>
@@ -42,11 +42,11 @@ const HomeNav: FC<{ links?: { name: string; link: string }[] }> = ({ links }) =>
         </Container>
       </Pane>
     </nav>
-  )
+  );
 }
 
 HomeNav.defaultProps = {
   links: [{ name: 'Blog', link: '/blog' }],
-}
+};
 
-export default HomeNav
+export default HomeNav;
