@@ -1,3 +1,3 @@
 import { Db } from 'mongodb';
 
-export const getUserById = async (db: Db, id: string) => { };
+export const getUserById = async (db: Db, id: string) => db.collection('users').findOne({ _id: id });
