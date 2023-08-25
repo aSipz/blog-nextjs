@@ -121,15 +121,4 @@ export async function getServerSideProps(ctx) {
   };
 }
 
-/**
- * Catch all handler. Must handle all different page
- * states.
- * 1. Folders - none selected
- * 2. Folders => Folder selected
- * 3. Folders => Folder selected => Document selected
- *
- * An unauth user should not be able to access this page.
- *
- * @param context
- */
 export default App;
